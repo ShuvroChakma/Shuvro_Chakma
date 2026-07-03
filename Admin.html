@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Shuvro Chakma Portfolio</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <a href="index.html" class="admin-back">← Back to site</a>
+  <div class="admin-header">
+    <h1>Admin Panel</h1>
+    <p>Add, edit, and remove projects, and update your profile photo. Everything is saved in this browser's <code>localStorage</code> — no server or database needed. Changes appear instantly on the Home, About, and Projects pages.</p>
+  </div>
+
+  <div class="admin-status" data-admin-status></div>
+
+  <!-- ===== Profile photo ===== -->
+  <section class="admin-card">
+    <h2>Profile photo</h2>
+    <p class="admin-card-sub">Used on the About page (and can be reused on the homepage). Stored as an image in your browser.</p>
+    <div class="photo-manager">
+      <div class="photo-frame" data-photo-preview></div>
+      <div class="photo-manager-controls">
+        <label class="btn btn-primary btn-sm" style="cursor:pointer; display:inline-flex; width:fit-content;">
+          Upload photo
+          <input type="file" id="profile-photo-input" accept="image/*" style="display:none;">
+        </label>
+        <button type="button" class="btn btn-ghost btn-sm" data-remove-photo>Remove photo</button>
+        <span class="form-hint">JPG or PNG, square images work best.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Add / edit project form ===== -->
+  <section class="admin-card">
+    <h2 data-form-title>Add a new project</h2>
+    <p class="admin-card-sub">Fields marked with the title and summary are required. Everything else is optional but recommended.</p>
+
+    <form id="project-form">
+      <div class="admin-form-grid">
+        <div class="form-row form-row--full">
+          <label for="title">Project title</label>
+          <input type="text" id="title" name="title" placeholder="e.g. TaskFlow — Team Task Manager" required>
+        </div>
+
+        <div class="form-row">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Full Stack" selected>Full Stack</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="tech">Technologies used</label>
+          <input type="text" id="tech" name="tech" placeholder="React, Node.js, MongoDB (comma separated)">
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="summary">Short summary</label>
+          <input type="text" id="summary" name="summary" placeholder="One sentence describing the project" required>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="description">Full description</label>
+          <textarea id="description" name="description" placeholder="A more detailed description of what the project does and why you built it."></textarea>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="features">Features (one per line)</label>
+          <textarea id="features" name="features" placeholder="Drag-and-drop kanban board&#10;Role-based access&#10;Email notifications"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="challenges">Challenges faced</label>
+          <textarea id="challenges" name="challenges" placeholder="What was difficult about this project?"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="solutions">Solutions implemented</label>
+          <textarea id="solutions" name="solutions" placeholder="How did you solve it?"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="liveUrl">Live demo URL</label>
+          <input type="url" id="liveUrl" name="liveUrl" placeholder="https://your-project.vercel.app">
+        </div>
+
+        <div class="form-row">
+          <label for="githubUrl">GitHub repository URL</label>
+          <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/you/project">
+        </div>
+
+        <div class="form-row form-row--full">
+          <label>Project banner image</label>
+          <div class="image-upload-row">
+            <div class="image-preview" data-image-preview></div>
+            <label class="btn btn-ghost btn-sm" style="cursor:pointer;">
+              Choose image
+              <input type="file" id="project-image-input" accept="image/*" style="display:none;">
+            </label>
+          </div>
+        </div>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn-primary">Save project</button>
+          <button type="button" class="btn btn-ghost" data-cancel-edit hidden>Cancel edit</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===== Existing projects list ===== -->
+  <section class="admin-card">
+    <h2>Your projects</h2>
+    <p class="admin-card-sub">Edit or delete existing entries. These are the exact projects shown on the Projects page.</p>
+    <div data-admin-project-list></div>
+  </section>
+
+  <!-- ===== Import / export / reset ===== -->
+  <section class="admin-card">
+    <h2>Backup & deployment</h2>
+    <p class="admin-card-sub">Export your projects as a JSON file (useful for backing up or committing to <code>data/projects.json</code> before deploying), import a JSON file, or reset to the sample projects.</p>
+    <div class="admin-utility-row">
+      <button type="button" class="btn btn-outline btn-sm" data-export-json>Export projects.json</button>
+      <label class="btn btn-ghost btn-sm" style="cursor:pointer;">
+        Import from JSON
+        <input type="file" id="import-json-input" accept="application/json" style="display:none;">
+      </label>
+      <button type="button" class="btn btn-danger btn-sm" data-reset-defaults>Reset to sample projects</button>
+    </div>
+  </section>
+</div>
+
+<script src="js/projects.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

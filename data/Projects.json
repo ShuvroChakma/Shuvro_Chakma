@@ -1,0 +1,97 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Nazumeah Jewellers — Jewelry E-commerce Platform",
+    "category": "Frontend",
+    "summary": "A full-scale e-commerce frontend for customer-facing shopping and an admin dashboard for catalog and order management.",
+    "description": "Built a full-scale e-commerce frontend covering both customer-facing shopping flows and an admin dashboard for product catalog and order management. Structured routing and data flow with TanStack Router, nested routes, loaders, and TypeScript interfaces to keep the codebase consistent and reduce runtime errors, while working closely with API integration requirements and documenting data structures for long-term maintainability.",
+    "tech": ["React", "TypeScript", "Vite", "TanStack Router"],
+    "features": [
+      "Customer-facing storefront and product catalog",
+      "Admin dashboard for product and order management",
+      "Nested routing with TanStack Router loaders",
+      "TypeScript interfaces for consistent data structures"
+    ],
+    "challenges": "Coordinating consistent data flow and routing across two very different experiences — a public storefront and an internal admin dashboard — while keeping the codebase maintainable.",
+    "solutions": "Used TanStack Router's nested routes and loaders alongside well-defined TypeScript interfaces, and documented API data structures clearly to reduce integration errors and improve team communication.",
+    "image": "",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "proj-2",
+    "title": "InsiderJobs — Job Portal / Job Management System",
+    "category": "Frontend",
+    "summary": "A role-based job portal supporting job seekers and recruiters with posting, application tracking, and CRUD workflows.",
+    "description": "Developed role-based interfaces for job seekers and recruiters, supporting dashboard workflows, job posting, application tracking, and CRUD operations. Coordinated applicant and recruiter actions through REST APIs while maintaining clean, responsive frontend flows across both user roles.",
+    "tech": ["React", "REST APIs"],
+    "features": [
+      "Separate dashboards for job seekers and recruiters",
+      "Job posting and application tracking",
+      "Full CRUD operations on listings and applications",
+      "Responsive interfaces across both user roles"
+    ],
+    "challenges": "Mapping two distinct user roles with different permissions and workflows onto a single, coherent application without duplicating logic.",
+    "solutions": "Built role-based interfaces on top of REST APIs, keeping shared components reusable while clearly separating recruiter and job-seeker workflows — deepening the approach to requirements, user roles, and process mapping.",
+    "image": "",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "proj-3",
+    "title": "ClimateX — Weather Application",
+    "category": "Full Stack",
+    "summary": "A responsive weather app with real-time data, a clean UI, and a custom Node.js backend for API integration.",
+    "description": "Developed a responsive weather application with a clean user interface, API-based real-time data display, and performance-focused state handling. Paired the frontend with a custom Node.js backend to manage API integration, which deepened understanding of client-server architecture and technical troubleshooting.",
+    "tech": ["React", "Tailwind CSS", "Node.js", "WeatherAPI"],
+    "features": [
+      "Real-time weather data display",
+      "Custom Node.js backend for API integration",
+      "Performance-focused state handling",
+      "Clean, responsive UI with Tailwind CSS"
+    ],
+    "challenges": "Handling real-time API data efficiently on the frontend without unnecessary re-renders or stale state.",
+    "solutions": "Introduced performance-focused state handling on the client and routed API calls through a custom Node.js backend, which also made debugging and troubleshooting the data flow more straightforward.",
+    "image": "",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "proj-4",
+    "title": "Core Dhaka Landing Page — Corporate Website",
+    "category": "Frontend",
+    "summary": "A responsive corporate landing page built with WordPress and Elementor for business presentation and marketing.",
+    "description": "Designed and customized a responsive corporate landing page using Elementor sections, layouts, and reusable UI components, supporting business presentation and digital marketing goals through a polished, conversion-focused page structure.",
+    "tech": ["WordPress", "Elementor"],
+    "features": [
+      "Custom Elementor sections and layouts",
+      "Reusable UI components",
+      "Conversion-focused page structure",
+      "Fully responsive across devices"
+    ],
+    "challenges": "Balancing a visually polished, marketing-ready design with fast load times and mobile responsiveness inside a page-builder workflow.",
+    "solutions": "Built the page from reusable Elementor components and layouts, tuning sections for both visual polish and responsiveness to support the client's presentation and marketing goals.",
+    "image": "",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": "proj-5",
+    "title": "Northstar Trading Landing Page — Corporate Website",
+    "category": "Frontend",
+    "summary": "A responsive Elementor landing page built for lead generation and client engagement.",
+    "description": "Built and optimized a responsive landing page for Northstar Trading using Elementor, ensuring mobile compatibility, intuitive navigation, and a professional user experience that translates business requirements into visually appealing sections.",
+    "tech": ["WordPress", "Elementor"],
+    "features": [
+      "Mobile-compatible responsive layout",
+      "Intuitive navigation structure",
+      "Sections built around marketing and lead generation goals",
+      "Professional, business-ready visual design"
+    ],
+    "challenges": "Translating business requirements into a page structure that supports marketing and lead-generation goals without overcomplicating navigation.",
+    "solutions": "Mapped business requirements directly to visually clear Elementor sections, prioritizing intuitive navigation and mobile compatibility throughout.",
+    "image": "",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  }
+]

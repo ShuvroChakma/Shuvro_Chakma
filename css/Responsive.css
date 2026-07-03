@@ -1,0 +1,47 @@
+/* ============================================
+   RESPONSIVE.CSS — mobile-first breakpoints
+   ============================================ */
+
+@media (max-width: 960px) {
+  .hero .container { grid-template-columns: 1fr; gap: 44px; }
+  .terminal { order: -1; transform: rotate(0deg); max-width: 480px; margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr; }
+  .photo-frame { max-width: 260px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px 28px;
+    gap: 18px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .nav-links.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .nav-toggle { display: flex; }
+
+  .section { padding: 64px 0; }
+  .hero { padding: 48px 0 64px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 520px) {
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { justify-content: center; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .modal-body { padding: 22px 20px 28px; }
+  .strengths-grid { grid-template-columns: 1fr 1fr; }
+}

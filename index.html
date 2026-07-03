@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shuvro Chakma - Frontend Developer</title>
+<meta name="description" content="Portfolio of Shuvro Chakma, a Full-Stack (MERN) Developer building fast, accessible web applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="bracket">&lt;</span>Shuvro Chakma<span class="bracket">/&gt;</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a> 
+      <a href="projects.html">Projects</a>
+      <a href="index.html#services">Services</a> 
+      <a href="index.html#contact">Contact</a>
+      <a href="admin.html" class="admin-link">Admin</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">Available for freelance & full-time roles</p>
+        <h1 class="hero-name">Hi, I'm <span class="accent-text">Shuvro Chakma</span></h1>
+        <p class="hero-title">Full-Stack Developer / MERN Stack Developer<span class="cursor" aria-hidden="true"></span></p>
+        <p class="hero-summary">I design and build reliable, fast, and accessible web applications end to end — from React interfaces to Node.js APIs and MongoDB data models. I care about clean code, thoughtful UX, and shipping things that actually work.</p>
+        <div class="hero-cta">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="assets/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+          <a href="homepage.html#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="terminal-dot terminal-dot--r"></span>
+          <span class="terminal-dot terminal-dot--y"></span>
+          <span class="terminal-dot terminal-dot--g"></span>
+          <span class="terminal-title">shuvro@dev — profile.js</span>
+        </div>
+        <div class="terminal-body">
+<div class="line"><span class="tk-key">const</span> <span class="tk-fn">developer</span> <span class="tk-punc">=</span> <span class="tk-punc">{</span></div>
+<div class="line">&nbsp;&nbsp;name<span class="tk-punc">:</span> <span class="tk-str">"Shuvro Chakma"</span><span class="tk-punc">,</span></div>
+<div class="line">&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Frontend Developer"</span><span class="tk-punc">,</span></div>
+<div class="line">&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"React"</span><span class="tk-punc">,</span> <span class="tk-str">"Node"</span><span class="tk-punc">,</span> <span class="tk-str">"Mongo"</span><span class="tk-punc">]</span><span class="tk-punc">,</span></div>
+<div class="line">&nbsp;&nbsp;focus<span class="tk-punc">:</span> <span class="tk-str">"clean UX + solid APIs"</span><span class="tk-punc">,</span></div>
+<div class="line">&nbsp;&nbsp;<span class="tk-fn">isAvailable</span><span class="tk-punc">:</span> <span class="tk-key">true</span></div>
+<div class="line"><span class="tk-punc">}</span><span class="tk-punc">;</span></div>
+<div class="line tk-cmt">// thanks for stopping by 👋</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About preview ===== -->
+  <section class="section section--alt reveal">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">A developer who enjoys the whole stack</h2>
+      <p class="section-sub">I've spent the last few years building web applications from the database up — comfortable moving between a React component and an Express route in the same afternoon. <a href="about.html" style="color: var(--accent-dark); font-weight: 600; text-decoration: underline;">Read the full story →</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section class="section reveal" id="skills">
+    <div class="container">
+      <p class="eyebrow">Skills</p>
+      <h2 class="section-title">Tools I reach for daily</h2>
+      <p class="section-sub">A categorized snapshot of the frontend, backend, and tooling I use to ship production-ready applications.</p>
+
+      <h3 class="skills-category-label">Frontend</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">H5</span><span class="skill-name">HTML5</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div><div class="skill-level">95%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">C3</span><span class="skill-name">CSS3</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div><div class="skill-level">92%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">JS</span><span class="skill-name">JavaScript (ES6+)</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div><div class="skill-level">90%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">R</span><span class="skill-name">React.js</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div><div class="skill-level">88%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">TW</span><span class="skill-name">Tailwind CSS</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div><div class="skill-level">85%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">BS</span><span class="skill-name">Bootstrap</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div><div class="skill-level">80%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">RD</span><span class="skill-name">Responsive Design</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:93%"></div></div><div class="skill-level">93%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">TS</span><span class="skill-name">TypeScript (basics)</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:65%"></div></div><div class="skill-level">65%</div></div>
+      </div>
+
+      <h3 class="skills-category-label">Backend</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">N</span><span class="skill-name">Node.js</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div><div class="skill-level">88%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Ex</span><span class="skill-name">Express.js</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:87%"></div></div><div class="skill-level">87%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">API</span><span class="skill-name">REST APIs</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div><div class="skill-level">90%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">JWT</span><span class="skill-name">JWT Authentication</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div><div class="skill-level">82%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Mo</span><span class="skill-name">MongoDB</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div><div class="skill-level">85%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Ms</span><span class="skill-name">Mongoose</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:83%"></div></div><div class="skill-level">83%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">FU</span><span class="skill-name">File Upload Systems</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div><div class="skill-level">75%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">MVC</span><span class="skill-name">MVC Architecture</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:86%"></div></div><div class="skill-level">86%</div></div>
+      </div>
+
+      <h3 class="skills-category-label">Tools & Technologies</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Git</span><span class="skill-name">Git</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div><div class="skill-level">90%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">GH</span><span class="skill-name">GitHub</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div><div class="skill-level">90%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Pm</span><span class="skill-name">Postman</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div><div class="skill-level">85%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">VS</span><span class="skill-name">VS Code</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div><div class="skill-level">95%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">npm</span><span class="skill-name">npm</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div><div class="skill-level">88%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Vt</span><span class="skill-name">Vite</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div><div class="skill-level">80%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Fg</span><span class="skill-name">Figma</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%"></div></div><div class="skill-level">70%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">Wp</span><span class="skill-name">WordPress</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:72%"></div></div><div class="skill-level">72%</div></div>
+        <div class="skill-card"><div class="skill-card-top"><span class="skill-icon">El</span><span class="skill-name">Elementor</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:68%"></div></div><div class="skill-level">68%</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Featured Projects ===== -->
+  <section class="section section--alt reveal">
+    <div class="container">
+      <p class="eyebrow">Selected work</p>
+      <h2 class="section-title">Featured projects</h2>
+      <p class="section-sub">A few recent builds. Head to the full projects page to filter by category and see complete case studies.</p>
+      <div class="projects-grid" data-featured-grid></div>
+      <div style="margin-top: 32px; text-align:center;">
+        <a href="projects.html" class="btn btn-outline">See all projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section reveal" id="services">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h2 class="section-title">What I can help you build</h2>
+      <p class="section-sub">From a single landing page to a full application with an authenticated backend.</p>
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon">FE</div><h3>Frontend Development</h3><p>Responsive, accessible interfaces built with modern HTML, CSS, and React.</p></div>
+        <div class="service-card"><div class="service-icon">BE</div><h3>Backend Development</h3><p>Node.js and Express APIs with clean architecture and solid validation.</p></div>
+        <div class="service-card"><div class="service-icon">FS</div><h3>Full-Stack Web Apps</h3><p>End-to-end applications from database schema to deployed UI.</p></div>
+        <div class="service-card"><div class="service-icon">WP</div><h3>WordPress Development</h3><p>Custom themes and Elementor builds for content-driven sites.</p></div>
+        <div class="service-card"><div class="service-icon">API</div><h3>API Integration</h3><p>Connecting third-party services and REST APIs into your product.</p></div>
+        <div class="service-card"><div class="service-icon">RD</div><h3>Responsive Website Design</h3><p>Pixel-considered layouts that hold up from mobile to widescreen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section section--alt reveal">
+    <div class="container">
+      <p class="eyebrow">Testimonials</p>
+      <h2 class="section-title">What people say</h2>
+      <p class="section-sub">Feedback from clients I've worked with.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Shuvro built our jewelry storefront and admin dashboard exactly the way we needed it — smooth to use for customers and simple for our team to manage day to day.</p>
+          <div class="testimonial-person"><span class="testimonial-avatar">SI</span><div><div class="testimonial-name">Md. Shawkot Iqbal</div><div class="testimonial-role">Founder, Nazumeah Jewellers</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">The landing page Shuvro delivered captured exactly what we wanted to say about our business, and it looks great on every device.</p>
+          <div class="testimonial-person"><span class="testimonial-avatar">TR</span><div><div class="testimonial-name">Md. Tanvir Rubayet</div><div class="testimonial-role">Strategy Incharge, Core Dhaka</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Professional, responsive, and easy to work with — our new landing page has made a real difference in how prospects see our brand.</p>
+          <div class="testimonial-person"><span class="testimonial-avatar">NT</span><div><div class="testimonial-name">Founder</div><div class="testimonial-role">Northstar Trading BD</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section reveal" id="contact">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Let's build something together</h2>
+      <p class="section-sub">Have a project in mind, or just want to say hello? Reach out below.</p>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-list">
+            <div class="contact-info-item"><span class="contact-info-icon">@</span><div><div class="contact-info-label">Email</div><div class="contact-info-value">shubrachakma101@gmail.com</div></div></div>
+            <div class="contact-info-item"><span class="contact-info-icon">#</span><div><div class="contact-info-label">Phone</div><div class="contact-info-value">+880 1794213557</div></div></div>
+            <div class="contact-info-item"><span class="contact-info-icon">in</span><div><div class="contact-info-label">LinkedIn</div><div class="contact-info-value">linkedin.com/in/shuvro-chakma-394086244</div></div></div>
+            <div class="contact-info-item"><span class="contact-info-icon">gh</span><div><div class="contact-info-label">GitHub</div><div class="contact-info-value">github.com/ShuvroChakma</div></div></div>
+            <div class="contact-info-item"><span class="contact-info-icon">loc</span><div><div class="contact-info-label">Location</div><div class="contact-info-value">Dhaka, Bangladesh</div></div></div>
+          </div>
+        </div>
+
+        <!--
+          FORMSPREE SETUP:
+          1. Go to https://formspree.io and sign up (free tier is fine).
+          2. Create a new form, using shubrachakma101@gmail.com as the
+             destination email. Formspree will give you a form endpoint
+             that looks like: https://formspree.io/f/xxxxxxxx
+          3. Replace YOUR_FORM_ID below with the ID from that URL.
+          4. Submit the form once for real — Formspree sends a one-time
+             confirmation email you must click before it goes live.
+        -->
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzjvzrp" method="POST" novalidate>
+          <div class="form-success" id="contact-success"></div>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <span class="form-error" data-error-for="name"></span>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="form-error" data-error-for="email"></span>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about your project..."></textarea>
+            <span class="form-error" data-error-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">&lt;Shuvro Chakma/&gt;</div>
+        <p>Full-Stack Developer building fast, accessible web applications with the MERN stack.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <div class="footer-social">
+          <a href="https://github.com/ShuvroChakma" aria-label="GitHub">gh</a>
+          <a href="https://www.linkedin.com/in/shuvro-chakma-394086244" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Shuvro Chakma. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- Project detail modal (shared markup, used by projects.js) -->
+<div class="modal-overlay" id="project-modal" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-wrap">
+      <button class="modal-close" data-modal-close aria-label="Close">×</button>
+      <div class="modal-banner" data-modal-banner></div>
+      <div class="modal-body">
+        <span class="project-tag" data-modal-tag></span>
+        <h3 class="project-title" style="margin-top:10px;" data-modal-title></h3>
+        <p class="project-summary" data-modal-desc></p>
+        <div class="project-tech" data-modal-tech></div>
+        <div class="modal-section"><h4>Key features</h4><ul data-modal-features></ul></div>
+        <div class="modal-section"><h4>Challenges</h4><p data-modal-challenges></p></div>
+        <div class="modal-section"><h4>Solutions</h4><p data-modal-solutions></p></div>
+        <div class="project-actions" style="margin-top:22px;">
+          <a class="btn btn-outline" data-modal-live target="_blank" rel="noopener">Live Demo</a>
+          <a class="btn btn-ghost" data-modal-repo target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/projects.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
