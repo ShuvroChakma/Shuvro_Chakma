@@ -95,7 +95,6 @@
   .admin-row-actions .btn { flex: 1; justify-content: center; }
 
   .terminal-body { font-size: 0.72rem; line-height: 1.6; }
-  .terminal-body .line { white-space: normal; word-break: break-word; }
 
   .back-to-top { width: 42px; height: 42px; bottom: 18px; right: 18px; }
 }
