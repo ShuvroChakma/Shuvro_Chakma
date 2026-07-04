@@ -812,11 +812,20 @@ input, textarea, select { font-family: inherit; }
 
 /* ---- Scroll reveal ---- */
 .reveal {
+  /* Content is visible by default no matter what — this must never
+     depend on JavaScript running correctly. The animation below is
+     a bonus effect only, applied via the .in-view class if/when JS
+     adds it; if JS fails, is blocked, or a tool doesn't scroll the
+     page, the section is still fully visible and readable. */
+  opacity: 1;
+  transform: none;
+}
+.reveal.will-animate {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal.will-animate.in-view { opacity: 1; transform: translateY(0); }
 
 /* ---- Admin link (subtle) ---- */
 .admin-link {

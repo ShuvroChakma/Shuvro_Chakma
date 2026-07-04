@@ -39,9 +39,14 @@
     });
   }
 
-  /* ---- Scroll reveal ---- */
+  /* ---- Scroll reveal (decorative only — see .reveal in style.css) ----
+     Content is visible by default from CSS alone. This only adds a
+     subtle fade-up animation, and only once we're sure the observer
+     is actually going to fire; if anything here fails, sections
+     simply stay visible with no animation, never invisible. */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
+    revealEls.forEach(function (el) { el.classList.add("will-animate"); });
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -54,8 +59,12 @@
       { threshold: 0.12 }
     );
     revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("in-view"); });
+    // Safety net: if a section somehow never intersects (e.g. a
+    // screenshot/crawler tool that doesn't scroll), force it visible
+    // after a short delay instead of leaving it hidden forever.
+    setTimeout(function () {
+      revealEls.forEach(function (el) { el.classList.add("in-view"); });
+    }, 2500);
   }
 
   /* ---- Profile photo sync ----
