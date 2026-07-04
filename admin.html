@@ -12,7 +12,19 @@
 </head>
 <body>
 
-<div class="admin-shell">
+<!-- Simple password gate. This is a static site with no server, so
+     this is a deterrent against casual visitors/search engines, not
+     real security — anyone who reads this file's source can see the
+     password. Change PASSWORD below before deploying. -->
+<div id="admin-gate" style="max-width:360px; margin:120px auto; padding:32px 24px; text-align:center;">
+  <h2 style="font-family: var(--font-display); margin-bottom: 10px;">Admin Access</h2>
+  <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">Enter the password to manage this portfolio.</p>
+  <input type="password" id="admin-password-input" placeholder="Password" style="width:100%; padding:12px 14px; border-radius:6px; border:1px solid var(--border); margin-bottom:12px; box-sizing:border-box;">
+  <button id="admin-password-submit" class="btn btn-primary" style="width:100%;">Unlock</button>
+  <p id="admin-password-error" style="color:#C0392B; font-size:0.82rem; margin-top:10px; display:none;">Incorrect password.</p>
+</div>
+
+<div class="admin-shell" id="admin-content" style="display:none;">
   <a href="index.html" class="admin-back">← Back to site</a>
   <div class="admin-header">
     <h1>Admin Panel</h1>
@@ -138,9 +150,136 @@
       <button type="button" class="btn btn-danger btn-sm" data-reset-defaults>Reset to sample projects</button>
     </div>
   </section>
+
+  <!-- ===== Change password ===== -->
+  <section class="admin-card">
+    <h2>Change admin password</h2>
+    <p class="admin-card-sub">Sets a new password for logging into this panel. <strong>Important:</strong> since this is a static site with no server, the new password is saved only in this browser's storage on this device. It will keep working here, but any other browser or device (or if you clear this browser's data) will still need the original default password until you change it there too.</p>
+
+    <form id="change-password-form" style="display:flex; flex-direction:column; gap:14px; max-width:420px;">
+      <div class="form-row">
+        <label for="current-password">Current password</label>
+        <input type="password" id="current-password" autocomplete="current-password">
+      </div>
+      <div class="form-row">
+        <label for="new-password">New password</label>
+        <input type="password" id="new-password" autocomplete="new-password">
+      </div>
+      <div class="form-row">
+        <label for="confirm-password">Confirm new password</label>
+        <input type="password" id="confirm-password" autocomplete="new-password">
+      </div>
+      <div id="change-password-status" class="form-hint" style="min-height:16px;"></div>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Update password</button>
+    </form>
+  </section>
 </div>
 
 <script src="js/projects.js"></script>
 <script src="js/admin.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* The password itself is never stored — only its SHA-256 hash.
+     Someone viewing this file's source sees a scrambled string, not
+     your actual password.
+
+     DEFAULT_PASSWORD_HASH is the fallback baked into this file (works
+     everywhere this file is deployed). If someone uses the "Change
+     admin password" form inside the panel, the new hash is saved to
+     this browser's localStorage under STORAGE_KEY and takes priority
+     over the default — but only in that browser, on that device. */
+  var DEFAULT_PASSWORD_HASH = "cda8c02096cc4228096c8d32b0d8acf42cba4dc0d399ce3fb134260b949ec7a4";
+  // ^ corresponds to the default password "shubra12345".
+  var STORAGE_KEY = "admin_password_hash";
+
+  var gate = document.getElementById("admin-gate");
+  var content = document.getElementById("admin-content");
+  var input = document.getElementById("admin-password-input");
+  var submitBtn = document.getElementById("admin-password-submit");
+  var errorMsg = document.getElementById("admin-password-error");
+
+  function currentHash() {
+    return localStorage.getItem(STORAGE_KEY) || DEFAULT_PASSWORD_HASH;
+  }
+
+  function sha256Hex(text) {
+    var data = new TextEncoder().encode(text);
+    return crypto.subtle.digest("SHA-256", data).then(function (buffer) {
+      var bytes = Array.from(new Uint8Array(buffer));
+      return bytes.map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+    });
+  }
+
+  function unlockPanel() {
+    sessionStorage.setItem("admin_unlocked", "yes");
+    gate.style.display = "none";
+    content.style.display = "block";
+  }
+
+  function tryUnlock() {
+    sha256Hex(input.value).then(function (hash) {
+      if (hash === currentHash()) {
+        unlockPanel();
+      } else {
+        errorMsg.style.display = "block";
+        input.value = "";
+        input.focus();
+      }
+    });
+  }
+
+  submitBtn.addEventListener("click", tryUnlock);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") tryUnlock();
+  });
+
+  if (sessionStorage.getItem("admin_unlocked") === "yes") {
+    unlockPanel();
+  } else {
+    input.focus();
+  }
+
+  /* ---------- Change password form ---------- */
+  var changeForm = document.getElementById("change-password-form");
+  var currentPwField = document.getElementById("current-password");
+  var newPwField = document.getElementById("new-password");
+  var confirmPwField = document.getElementById("confirm-password");
+  var statusEl = document.getElementById("change-password-status");
+
+  if (changeForm) {
+    changeForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      statusEl.style.color = "";
+
+      if (newPwField.value.length < 4) {
+        statusEl.style.color = "#C0392B";
+        statusEl.textContent = "New password should be at least 4 characters.";
+        return;
+      }
+      if (newPwField.value !== confirmPwField.value) {
+        statusEl.style.color = "#C0392B";
+        statusEl.textContent = "New password and confirmation don't match.";
+        return;
+      }
+
+      sha256Hex(currentPwField.value).then(function (hash) {
+        if (hash !== currentHash()) {
+          statusEl.style.color = "#C0392B";
+          statusEl.textContent = "Current password is incorrect.";
+          return;
+        }
+        sha256Hex(newPwField.value).then(function (newHash) {
+          localStorage.setItem(STORAGE_KEY, newHash);
+          statusEl.style.color = "var(--accent-dark)";
+          statusEl.textContent = "Password updated for this browser. Remember it — write it down somewhere safe.";
+          changeForm.reset();
+        });
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>

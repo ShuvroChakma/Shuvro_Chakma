@@ -36,6 +36,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -690,7 +695,7 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 .contact-info-label { font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); }
-.contact-info-value { font-weight: 600; font-size: 0.92rem; }
+.contact-info-value { font-weight: 600; font-size: 0.92rem; word-break: break-word; overflow-wrap: anywhere; }
 
 .contact-form {
   background: var(--surface);
